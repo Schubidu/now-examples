@@ -1,9 +1,13 @@
 {
   "version": 2,
   "builds": [
-    { "src": "index.js", "use": "@now/node-server" }
+    {
+      "src": "index.js",
+      "use": "@now/node-server@canary"
+    }
   ],
-  "routes": [
-    { "src": "/.*", "dest": "index.js" }
-  ]
+  "env": {
+    "IS_NOW": "true"
+  },
+  "routes": [{ "src": "/.*", "dest": "/src/index.ts" }]
 }
